@@ -469,8 +469,8 @@ run_purely_synchronous_sections() {
     # Check mount options.
     # FreeBSD doesn't do remount-ro on errors, but the users might consider
     # security related mount options more important.
-    echo '<<<mounts>>>'
-    mount -p -t ufs
+    #echo '<<<mounts>>>'
+    #mount -p -t ufs
 
     # processes including username, without kernel processes
     echo '<<<ps>>>'
