@@ -426,7 +426,7 @@ run_purely_synchronous_sections() {
     echo '<<<df>>>'
     # no special zfs handling so far, the ZFS.pools plugin has been tested to
     # work on FreeBSD
-    if df -T >/dev/null; then
+    if df -T -t ufs >/dev/null; then
         df -kTP -t ufs | grep -v -E '(Filesystem|devfs|procfs|fdescfs|basejail)'
     else
         df -kP -t ufs | grep -v -E '(Filesystem|devfs|procfs|fdescfs|basejail)' | awk '{ print $1,"ufs",$2,$3,$4,$5,$6 }'
